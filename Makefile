@@ -378,7 +378,13 @@ CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 CFLAGS_MODULE   =
 AFLAGS_MODULE   =
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	=
+CFLAGS_KERNEL	= -Wno-duplicate-decl-specifier \
+		-Wno-bool-operation \
+		-Wno-misleading-indentation \
+		-Wno-memset-elt-size \
+		-Wno-parentheses \
+		-Wno-pointer-compare \
+		-Wno-bool-compare
 AFLAGS_KERNEL	=
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage -fno-tree-loop-im
 CFLAGS_KCOV	= -fsanitize-coverage=trace-pc
